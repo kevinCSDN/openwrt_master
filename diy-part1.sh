@@ -46,8 +46,8 @@ sed -i '$a src-git kenzo https://github.com/kenzok8/openwrt-packages' feeds.conf
 
 git clone https://github.com/kiddin9/openwrt-packages
 shopt -s extglob
-rm -rf openwrt-packages/!(luci-app-netdata|luci-app-fullconenat|fullconenat)
-cp -r openwrt-packages/{luci-app-netdata,luci-app-fullconenat,fullconenat} package/
+rm -rf openwrt-packages/!(luci-app-netdata)
+cp -r openwrt-packages/{luci-app-netdata} package/
 rm -rf openwrt-packages
 
 #git clone https://github.com/coolsnowwolf/luci luci1
