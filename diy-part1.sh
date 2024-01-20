@@ -16,7 +16,7 @@
 #sed -i '/routing/s/^/#/' feeds.conf.default
 #sed -i '/packages/s/^/#/' feeds.conf.default
 
-sed -i '$a src-git kenzo https://github.com/kenzok8/openwrt-packages' feeds.conf.default
+#sed -i '$a src-git kenzo https://github.com/kenzok8/openwrt-packages' feeds.conf.default
 #sed -i '$a src-git lede_luci https://github.com/coolsnowwolf/luci' feeds.conf.default
 #sed -i '$a src-git packages https://github.com/coolsnowwolf/packages' feeds.conf.default
 #sed -i '$a src-git luci https://github.com/coolsnowwolf/luci' feeds.conf.default
@@ -46,8 +46,8 @@ sed -i '$a src-git kenzo https://github.com/kenzok8/openwrt-packages' feeds.conf
 
 git clone https://github.com/kiddin9/openwrt-packages
 shopt -s extglob
-rm -rf openwrt-packages/!(luci-app-netdata)
-cp -r openwrt-packages/{luci-app-netdata} package/
+rm -rf openwrt-packages/!(luci-app-netdata|luci-app-smartdns|luci-app-upnp)
+cp -r openwrt-packages/{luci-app-netdata,luci-app-smartdns,luci-app-upnp} package/
 rm -rf openwrt-packages
 
 #git clone https://github.com/coolsnowwolf/luci luci1
