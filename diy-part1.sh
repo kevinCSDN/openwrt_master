@@ -44,11 +44,11 @@ sed -i '$a src-git kenzo https://github.com/kenzok8/openwrt-packages' feeds.conf
 
 
 
-#git clone https://github.com/kiddin9/openwrt-packages
-#shopt -s extglob
-#rm -rf openwrt-packages/!(luci-app-turboacc|shortcut-fe|dnsforwarder)
-#cp -r openwrt-packages/{luci-app-turboacc,dnsforwarder} package/
-#rm -rf openwrt-packages
+git clone https://github.com/kiddin9/openwrt-packages
+shopt -s extglob
+rm -rf openwrt-packages/!(luci-app-netdata|luci-app-fullconenat|fullconenat)
+cp -r openwrt-packages/{luci-app-netdata,luci-app-fullconenat,fullconenat} package/
+rm -rf openwrt-packages
 
 #git clone https://github.com/coolsnowwolf/luci luci1
 #shopt -s extglob
@@ -63,10 +63,12 @@ rm -rf feeds/packages/net/v2ray-geodata
 rm -rf feeds/luci/themes/luci-theme-argon
 
 cd package
+
 git clone https://github.com/f8q8/luci-app-autoreboot.git 
 cd ..
 
-
+git clone --depth=1 -b master https://github.com/jerrykuku/luci-theme-argon package/luci-theme-argon
+git clone --depth=1 https://github.com/jerrykuku/luci-app-argon-config package/luci-app-argon-config
 
 
 
